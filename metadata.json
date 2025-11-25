@@ -1,0 +1,5 @@
+{
+  "name": "M.I.R.R.O.R.",
+  "description": "An adaptive AI combat prototype that analyzes player behavior to generate a custom nemesis boss fight.",
+  "requestFramePermissions": []
+}
