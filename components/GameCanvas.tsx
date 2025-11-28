@@ -73,9 +73,13 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ phase, onPhaseComplete, onGameO
     gameStateRef.current.particles = [];
     
     const isBoss = phase === GamePhase.BOSS_FIGHT;
-    // Set Boss HP to 200 for a solid challenge
-    gameStateRef.current.enemy.hp = isBoss ? 200 : 60;
-    gameStateRef.current.enemy.maxHp = isBoss ? 200 : 60;
+    
+    // TRAINING ENEMY: 200 HP (Was 60) - To survive long enough for analysis
+    // BOSS: 350 HP (Was 200) - To be a real challenge
+    const enemyHP = isBoss ? 350 : 200;
+
+    gameStateRef.current.enemy.hp = enemyHP;
+    gameStateRef.current.enemy.maxHp = enemyHP;
     gameStateRef.current.enemy.x = 600;
     gameStateRef.current.enemy.y = GROUND_Y - 60;
     gameStateRef.current.enemy.stalemateTimer = 0;
